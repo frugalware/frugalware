@@ -19,7 +19,8 @@
 VERSION = 0.6pre2
 CODENAME = Terminus
 
-LANGS = de hu
+FRUGALWARE_LANGS = de hu it
+SERVICE_LANGS = de hu
 
 INSTALL = /usr/bin/install -c
 DESTDIR =
@@ -40,12 +41,14 @@ install:
 	$(INSTALL) -m644 etc/termcap $(DESTDIR)/etc/
 	$(INSTALL) -d $(DESTDIR)/etc/X11
 	$(INSTALL) -d $(DESTDIR)/etc/rc.d
-	for i in $(LANGS); do \
+	for i in $(FRUGALWARE_LANGS); do \
 		mkdir -p $(DESTDIR)/lib/initscripts/messages/$${i}_`echo $$i|tr [:lower:] [:upper:]`/LC_MESSAGES/; \
+	done
+	for i in $(SERVICE_LANGS); do \
 		mkdir -p $(DESTDIR)/var/lib/frugalware/messages/$${i}_`echo $$i|tr [:lower:] [:upper:]`/LC_MESSAGES/; \
 	done
 	$(INSTALL) etc/rc.d/rc.frugalware $(DESTDIR)/etc/rc.d
-	for i in $(LANGS); do \
+	for i in $(FRUGALWARE_LANGS); do \
 		msgfmt -c --statistics -o $(DESTDIR)/lib/initscripts/messages/$${i}_`echo $$i|tr [:lower:] [:upper:]`/LC_MESSAGES/frugalware.mo etc/rc.d/rc.frugalware-$$i; \
 	done
 	$(INSTALL) -d $(DESTDIR)/etc/skel
@@ -105,7 +108,7 @@ install:
 	$(INSTALL) -d $(DESTDIR)/var/lib/frugalware/system
 	$(INSTALL) var/service $(DESTDIR)/var/lib/frugalware/system/
 	ln -s ../var/lib/frugalware/system/service $(DESTDIR)/sbin/service
-	for i in $(LANGS); do \
+	for i in $(SERVICE_LANGS); do \
 		msgfmt -c --statistics -o $(DESTDIR)/var/lib/frugalware/messages/$${i}_`echo $$i|tr [:lower:] [:upper:]`/LC_MESSAGES/service.mo var/service-$$i; \
 	done
 	$(INSTALL) -d $(DESTDIR)/var/lib/frugalware/tmp
