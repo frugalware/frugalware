@@ -127,6 +127,11 @@ install:
 	$(INSTALL) -d $(DESTDIR)/var/man
 	$(INSTALL) -d $(DESTDIR)/var/tmp
 	ln -sf /var/spool/rwho $(DESTDIR)/var/rwho
+ifeq ($(shell uname -m),x86_64)
+	ln -sf /lib $(DESTDIR)/lib64
+	ln -sf /usr/lib $(DESTDIR)/usr/lib64
+	ln -sf /usr/local/lib $(DESTDIR)/usr/local/lib64
+endif
 
 dist:
 	darcs changes >_darcs/current/Changelog
