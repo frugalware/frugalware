@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# (c) 2004 Vajna Miklos <mamajom@axelero.hu>
+# rc.messages for Frugalware
+# distributed under GPL License
+
+myname=`echo $0 |tr '/' '\n'|tail -n 1`
+lang=`echo $LANG|cut -d _ -f 1`
+
+if [ -e /var/lib/frugalware/messages/$myname.$lang ]; then
+    . /var/lib/frugalware/messages/$myname.$lang
+else
+    . /var/lib/frugalware/messages/$myname.en
+fi
