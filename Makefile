@@ -66,7 +66,6 @@ install:
 	$(INSTALL) -d $(DESTDIR)/usr
 	ln -sf /var/adm $(DESTDIR)/usr/
 	$(INSTALL) -d $(DESTDIR)/usr/bin
-	ln -sf /usr/X11R6/bin $(DESTDIR)/usr/bin/X11
 	$(INSTALL) -d $(DESTDIR)/usr/dict
 	$(INSTALL) -d $(DESTDIR)/usr/include
 	$(INSTALL) -d $(DESTDIR)/usr/info
@@ -96,10 +95,7 @@ install:
 	ln -sf /var/spool $(DESTDIR)/usr/spool
 	$(INSTALL) -d $(DESTDIR)/usr/src
 	ln -sf /var/tmp $(DESTDIR)/usr/tmp
-	ln -sf X11R6 $(DESTDIR)/usr/X11
 	$(INSTALL) -d $(DESTDIR)/var
-	$(INSTALL) -d $(DESTDIR)/var/X11R6
-	ln -sf ../../usr/X11R6/lib/X11 $(DESTDIR)/var/X11R6/lib
 	ln -sf log $(DESTDIR)/var/adm
 	$(INSTALL) -d $(DESTDIR)/var/lib
 	$(INSTALL) -d $(DESTDIR)/var/lib/frugalware
