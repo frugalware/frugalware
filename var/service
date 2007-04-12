@@ -18,11 +18,17 @@ elif [ "$1" = "--help" ]; then
 	echo $"Usage: $0 service action"
 	echo
 	echo $"Actions:"
+	echo
 	echo $"start        Start the service."
+	echo
 	echo $"stop         Stop the service."
+	echo
 	echo $"restart      Stop and start again the service."
+	echo
 	echo $"add          Adds a new service for management by chkconfig."
+	echo
 	echo $"del          Removes a service from chkconfig management."
+	echo
 	echo $"list         List whether the service is stopped or started in each runlevel."
 	exit 0
 fi

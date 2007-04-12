@@ -26,6 +26,8 @@ INSTALL = /usr/bin/install -c
 DESTDIR =
 
 all:
+	chmod +x var/service
+	help2man -n "manages Frugalware services" -S Frugalware -N var/service |sed 's/\\(co/(c)/' >var/service.1
 
 install:
 	$(INSTALL) -d $(DESTDIR)/bin
@@ -103,6 +105,7 @@ install:
 	$(INSTALL) -m644 var/rc.messages $(DESTDIR)/var/lib/frugalware/messages/rc.messages
 	$(INSTALL) -d $(DESTDIR)/var/lib/frugalware/system
 	$(INSTALL) var/service $(DESTDIR)/var/lib/frugalware/system/
+	$(INSTALL) -m644 var/service.1 $(DESTDIR)/usr/share/man/man1/
 	ln -s ../var/lib/frugalware/system/service $(DESTDIR)/sbin/service
 	for i in $(SERVICE_LANGS); do \
 		msgfmt -c --statistics -o $(DESTDIR)/var/lib/frugalware/messages/$${i}_`echo $$i|tr [:lower:] [:upper:]`/LC_MESSAGES/service.mo var/service-$$i; \
