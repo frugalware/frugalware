@@ -7,6 +7,25 @@
 TEXTDOMAIN=service
 TEXTDOMAINDIR=/var/lib/frugalware/messages
 
+if [ "$1" = "--version" ]; then
+	echo "fwmirror (pacman-tools) 0.2"
+	echo
+	echo "Copyright (c) 2003-2007 by Miklos Vajna <vmiklos@frugalware.org>"
+	echo "This is free software; see the source for copying conditions.  There is NO"
+	echo "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+	exit 0
+elif [ "$1" = "--help" ]; then
+	echo $"Usage: $0 service action"
+	echo
+	echo $"Actions:"
+	echo $"start        Start the service."
+	echo $"stop         Stop the service."
+	echo $"restart      Stop and start again the service."
+	echo $"add          Adds a new service for management by chkconfig."
+	echo $"del          Removes a service from chkconfig management."
+	echo $"list         List whether the service is stopped or started in each runlevel."
+	exit 0
+fi
 if [ "$1" = "list" ]; then
 	chkconfig --list --level $2 | grep $2:$3
 else
@@ -35,17 +54,5 @@ elif [ "$2" = "del" ]; then
 	chkconfig --del $service
 elif [ "$2" = "list" ]; then
 	chkconfig --list $service
-else # help
-	echo "service 0.1 (C) 2003-2004 Vajna Miklos"
-	echo
-	echo $"Usage: $0 service action"
-	echo
-	echo $"Actions:"
-	echo $"start        Start the service."
-	echo $"stop         Stop the service."
-	echo $"restart      Stop and start again the service."
-	echo $"add          Adds a new service for management by chkconfig."
-	echo $"del          Removes a service from chkconfig management."
-	echo $"list         List whether the service is stopped or started in each runlevel."
   fi
 fi
