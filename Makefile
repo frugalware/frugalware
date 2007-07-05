@@ -144,5 +144,5 @@ dist:
 	mv frugalware-$(VERSION).tar.gz{,.asc} ../
 
 release:
-	darcs tag --checkpoint $(VERSION)
+	git tag $(VERSION)
 	$(MAKE) dist
