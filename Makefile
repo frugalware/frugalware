@@ -133,12 +133,15 @@ ifeq ($(shell uname -m),x86_64)
 endif
 
 dist:
-	darcs changes >_darcs/pristine/Changelog
-	darcs dist -d frugalware-$(VERSION)
+	git-archive --format=tar --prefix=frugalware-$(VERSION)/ HEAD > frugalware-$(VERSION).tar
+	mkdir -p frugalware-$(VERSION)
+	git log > frugalware-$(VERSION)/Changelog
+	tar rf frugalware-$(VERSION).tar frugalware-$(VERSION)/Changelog
+	rm -rf frugalware-$(VERSION)
+	gzip -f -9 frugalware-$(VERSION).tar
 	gpg --comment "See http://ftp.frugalware.org/pub/README.GPG for info" \
 		-ba -u 20F55619 frugalware-$(VERSION).tar.gz
 	mv frugalware-$(VERSION).tar.gz{,.asc} ../
-	rm _darcs/pristine/Changelog
 
 release:
 	darcs tag --checkpoint $(VERSION)
