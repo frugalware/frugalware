@@ -135,7 +135,7 @@ endif
 dist:
 	git-archive --format=tar --prefix=frugalware-$(VERSION)/ HEAD > frugalware-$(VERSION).tar
 	mkdir -p frugalware-$(VERSION)
-	git log > frugalware-$(VERSION)/Changelog
+	git log --no-merges |git name-rev --tags --stdin > frugalware-$(VERSION)/Changelog
 	tar rf frugalware-$(VERSION).tar frugalware-$(VERSION)/Changelog
 	rm -rf frugalware-$(VERSION)
 	gzip -f -9 frugalware-$(VERSION).tar
