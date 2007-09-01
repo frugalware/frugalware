@@ -8,7 +8,7 @@ TEXTDOMAIN=service
 TEXTDOMAINDIR=/var/lib/frugalware/messages
 
 if [ "$1" = "--version" ]; then
-	echo "fwmirror (pacman-tools) 0.2"
+	echo "service (pacman-tools) 0.2"
 	echo
 	echo "Copyright (c) 2003-2007 by Miklos Vajna <vmiklos@frugalware.org>"
 	echo "This is free software; see the source for copying conditions.  There is NO"
