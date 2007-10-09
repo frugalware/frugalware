@@ -124,7 +124,7 @@ install:
 	$(INSTALL) -d $(DESTDIR)/var/spool
 	$(INSTALL) -d $(DESTDIR)/var/spool/mail
 	$(INSTALL) -d $(DESTDIR)/var/man
-	$(INSTALL) -d $(DESTDIR)/var/tmp
+	$(INSTALL) -d -m1777 $(DESTDIR)/var/tmp
 	ln -sf /var/spool/rwho $(DESTDIR)/var/rwho
 ifeq ($(shell uname -m),x86_64)
 	ln -sf /lib $(DESTDIR)/lib64
