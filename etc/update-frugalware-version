@@ -1,0 +1,19 @@
+#!/bin/sh
+
+post_sysupgrade()
+{
+	if grep -q '^[^#].*frugalware-current$' /etc/pacman-g2.conf; then
+		verf="/var/lib/pacman-g2/frugalware-current/.version"
+		if [ -e $verf ]; then
+			sed -i "s/ \(.*\) (/ `cat $verf` (/" /etc/frugalware-release
+			if [ -e /boot/grub/menu.lst ]; then
+				sed -i "s/Frugalware .*)/`cat /etc/frugalware-release`/" \
+					/boot/grub/menu.lst
+			fi
+		fi
+	fi
+}
+
+op=$1
+shift
+$op $*

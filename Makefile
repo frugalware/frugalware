@@ -41,6 +41,8 @@ install:
 	$(INSTALL) -m644 etc/nsswitch.conf $(DESTDIR)/etc/
 	$(INSTALL) -m644 etc/securetty $(DESTDIR)/etc/
 	$(INSTALL) -m644 etc/termcap $(DESTDIR)/etc/
+	$(INSTALL) -d $(DESTDIR)/etc/pacman-g2/hooks/
+	$(INSTALL) -m644 etc/update-frugalware-version $(DESTDIR)/etc/pacman-g2/hooks/
 	$(INSTALL) -d $(DESTDIR)/etc/X11
 	$(INSTALL) -d $(DESTDIR)/etc/rc.d
 	for i in $(FRUGALWARE_LANGS); do \
