@@ -94,7 +94,7 @@ install:
 		$(INSTALL) -d $(DESTDIR)/usr/share/man/$$i; \
 	done
 	for i in cat{1,2,3,4,5,6,7,8,9,n}; do \
-		ln -sf ../../var/man/$$i $(DESTDIR)/usr/share/man/$$i; \
+		ln -sf ../../../var/man/$$i $(DESTDIR)/usr/share/man/$$i; \
 	done
 	ln -sf /var/spool $(DESTDIR)/usr/spool
 	$(INSTALL) -d $(DESTDIR)/usr/src
