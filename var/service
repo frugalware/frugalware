@@ -23,6 +23,8 @@ elif [ "$1" = "--help" ]; then
 	echo
 	echo $"stop         Stop the service."
 	echo
+	echo $"status       Status of the service (if it supports querying so)."
+	echo
 	echo $"restart      Stop and start again the service."
 	echo
 	echo $"add          Adds a new service for management by chkconfig."

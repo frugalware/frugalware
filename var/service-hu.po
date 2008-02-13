@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bmh 1980\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-14 03:35+0200\n"
-"PO-Revision-Date: 2006-05-14 13:33+0200\n"
+"POT-Creation-Date: 2008-02-13 22:23+0100\n"
+"PO-Revision-Date: 2008-02-13 22:24+0100\n"
 "Last-Translator: Marcus Habermehl <bmh1980@frugalware.org>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -16,35 +16,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: service:41
+#: service:18
 msgid "Usage: $0 service action"
 msgstr "Használat: $0 szolgáltatás mûvelet"
 
-#: service:43
+#: service:20
 msgid "Actions:"
 msgstr "Mûveletek:"
 
-#: service:44
+#: service:22
 msgid "start        Start the service."
 msgstr "start        Elindítja a szolgáltatást."
 
-#: service:45
+#: service:24
 msgid "stop         Stop the service."
 msgstr "stop         Leállítja a szolgáltatást."
 
-#: service:46
+#: service:26
+msgid "status       Status of the service (if it supports querying so)."
+msgstr "status	     A szolgáltatás állapota (ha az adott esetben támogatott)."
+
+#: service:28
 msgid "restart      Stop and start again the service."
 msgstr "restart      Leállítja, majd újra elindítja a szolgáltatást."
 
-#: service:47
+#: service:30
 msgid "add          Adds a new service for management by chkconfig."
 msgstr "add          Új, kezelendö szolgáltatást ad meg a chkconfig-nak."
 
-#: service:48
+#: service:32
 msgid "del          Removes a service from chkconfig management."
 msgstr "del          Eltávolítja az idáig kezelt szolgáltatást."
 
-#: service:49
+#: service:34
 msgid ""
 "list         List whether the service is stopped or started in each runlevel."
 msgstr ""
