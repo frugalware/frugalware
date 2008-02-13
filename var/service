@@ -48,17 +48,13 @@ else
 			exit 1
 		fi
 	fi
-	if [ "$2" = "start" ]; then
-		$name start
-	elif [ "$2" = "stop" ]; then
-		$name stop
-	elif [ "$2" = "restart" ]; then
-		$name restart
-	elif [ "$2" = "add" ]; then
+	if [ "$2" = "add" ]; then
 		chkconfig --add $service
 	elif [ "$2" = "del" ]; then
 		chkconfig --del $service
 	elif [ "$2" = "list" ]; then
 		chkconfig --list $service
+	else
+		$name $2
 	fi
 fi
