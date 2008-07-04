@@ -135,7 +135,7 @@ ifeq ($(shell uname -m),x86_64)
 endif
 
 dist:
-	git-archive --format=tar --prefix=frugalware-$(VERSION)/ HEAD > frugalware-$(VERSION).tar
+	git archive --format=tar --prefix=frugalware-$(VERSION)/ HEAD > frugalware-$(VERSION).tar
 	mkdir -p frugalware-$(VERSION)
 	git log --no-merges |git name-rev --tags --stdin > frugalware-$(VERSION)/Changelog
 	tar rf frugalware-$(VERSION).tar frugalware-$(VERSION)/Changelog
