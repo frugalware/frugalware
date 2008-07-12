@@ -60,6 +60,7 @@ install:
 	ln -sf ../profile.d/lang.sh $(DESTDIR)/etc/sysconfig/language
 	$(INSTALL) -d $(DESTDIR)/home
 	$(INSTALL) -d $(DESTDIR)/mnt
+	$(INSTALL) -d $(DESTDIR)/opt
 	$(INSTALL) -d $(DESTDIR)/proc
 	$(INSTALL) -d -m710 $(DESTDIR)/root
 	$(INSTALL) -d $(DESTDIR)/sbin
