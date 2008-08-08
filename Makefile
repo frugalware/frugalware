@@ -16,7 +16,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 0.9pre2
+VERSION = 0.9rc1
 CODENAME = Solaria
 
 FRUGALWARE_LANGS = de hu it
