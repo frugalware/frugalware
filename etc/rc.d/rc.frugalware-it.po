@@ -18,5 +18,5 @@ msgstr ""
 
 #: rc.frugalware:16
 msgid "\\e[01mWelcome to \\e[01;36mFrugalware\\e[0m\\e[01m Linux!\\e[0m"
-msgstr "\\e[01;36mFrugalware\\e[0m \\e[01mLinux Lei saluta!\\e[0m"
+msgstr "\\e[01mBenvenuto su \\e[01;36mFrugalware\\e[0m\\e[01m Linux!\\e[0m"
 
