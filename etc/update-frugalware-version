@@ -12,6 +12,7 @@ post_sysupgrade()
 			elif [ -e /etc/yaboot.conf ]; then
 				sed -i "s/Frugalware .*)/`cat /etc/frugalware-release`/" \
 					/etc/yaboot.conf
+				ybin 2>/dev/null
 			fi
 		fi
 	fi
