@@ -12,7 +12,7 @@ post_sysupgrade()
 			elif [ -e /etc/yaboot.conf ]; then
 				sed -i "s/Frugalware .*)/`cat /etc/frugalware-release`/" \
 					/etc/yaboot.conf
-				ybin
+				grep -q unconfigured /etc/yaboot.conf || ybin
 			fi
 		fi
 	fi
