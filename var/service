@@ -81,9 +81,8 @@ else
 			## exists and is added  list it
 			chkconfig --list $service
 		else
-			## error , files exists but isn't added
-			echo $"Use $0 $1 add first."
-			exit 1
+			# we mimic the wished output of chkconfig
+			echo -e $service'\t\t0:off\t1:off\t2:off\t3:off\t4:off\t5:off\t6:off'
 		fi
 	else
 		$name $2
