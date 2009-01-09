@@ -1,6 +1,6 @@
 # Makefile for frugalware
 #
-# Copyright (C) 2007, 2008 Miklos Vajna <vmiklos@frugalware.org>
+# Copyright (C) 2007, 2008, 2009 Miklos Vajna <vmiklos@frugalware.org>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 1.0pre1
+VERSION = 1.0pre2
 CODENAME = Anacreon
 
 FRUGALWARE_LANGS = de hu it
