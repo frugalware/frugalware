@@ -16,8 +16,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 1.0
-CODENAME = Anacreon
+VERSION = 1.1pre1
+CODENAME = Getorin
 
 FRUGALWARE_LANGS = de hu it
 SERVICE_LANGS = de hu
