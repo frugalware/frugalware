@@ -16,8 +16,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 1.1
-CODENAME = Getorin
+VERSION = 1.2pre1
+CODENAME = Locris
 
 FRUGALWARE_LANGS = de hu it
 SERVICE_LANGS = de hu
