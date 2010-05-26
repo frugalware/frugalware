@@ -71,7 +71,6 @@ install:
 	$(INSTALL) -d $(DESTDIR)/usr
 	ln -sf /var/adm $(DESTDIR)/usr/
 	$(INSTALL) -d $(DESTDIR)/usr/bin
-	$(INSTALL) -d $(DESTDIR)/usr/dict
 	$(INSTALL) -d $(DESTDIR)/usr/include
 	$(INSTALL) -d $(DESTDIR)/usr/info
 	$(INSTALL) -d $(DESTDIR)/usr/lib
