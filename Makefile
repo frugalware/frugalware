@@ -16,7 +16,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 1.3rc1
+VERSION = 1.3rc2
 CODENAME = Haven
 
 FRUGALWARE_LANGS = de hu it
