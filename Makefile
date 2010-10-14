@@ -16,8 +16,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 1.3
-CODENAME = Haven
+VERSION = 1.4pre1
+CODENAME = Nexon
 
 FRUGALWARE_LANGS = de hu it
 SERVICE_LANGS = de hu
