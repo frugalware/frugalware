@@ -35,6 +35,7 @@ install:
 	$(INSTALL) -d $(DESTDIR)/dev
 	$(INSTALL) -d $(DESTDIR)/etc
 	sed 's/@VERSION@/$(VERSION)/;s/@CODENAME@/$(CODENAME)/' etc/frugalware-release.in > $(DESTDIR)/etc/frugalware-release
+	sed 's/@VERSION@/$(VERSION)/;s/@CODENAME@/$(CODENAME)/' etc/os-release.in > $(DESTDIR)/etc/os-release
 	sed 's/@VERSION@/$(VERSION)/;s/@CODENAME@/$(CODENAME)/' etc/issue.in > $(DESTDIR)/etc/issue
 	$(INSTALL) -m644 etc/issue.net $(DESTDIR)/etc/
 	$(INSTALL) -m644 etc/ld.so.conf $(DESTDIR)/etc/
