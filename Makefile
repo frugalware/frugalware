@@ -56,6 +56,8 @@ install:
 	for i in $(FRUGALWARE_LANGS); do \
 		msgfmt -c --statistics -o $(DESTDIR)/lib/initscripts/messages/$${i}_`echo $$i|tr [:lower:] [:upper:]`/LC_MESSAGES/frugalware.mo etc/rc.d/rc.frugalware-$$i; \
 	done
+	mkdir -p $(DESTDIR)/lib/systemd/system
+	ln -s systemd-initctl.service $(DESTDIR)/lib/systemd/system/frugalware.service
 	$(INSTALL) -d $(DESTDIR)/etc/skel
 	$(INSTALL) -d $(DESTDIR)/etc/sysconfig
 	ln -sf ../profile.d/lang.sh $(DESTDIR)/etc/sysconfig/language
