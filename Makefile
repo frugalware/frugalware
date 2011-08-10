@@ -16,7 +16,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 1.5rc2
+VERSION = 1.5
 CODENAME = Mores
 
 FRUGALWARE_LANGS = de hu it
