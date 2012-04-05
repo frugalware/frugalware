@@ -16,8 +16,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 1.6
-CODENAME = Fermus
+VERSION = 1.7pre1
+CODENAME = Gaia
 
 FRUGALWARE_LANGS = de hu it
 SERVICE_LANGS = de hu
