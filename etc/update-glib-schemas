@@ -1,0 +1,21 @@
+#!/bin/sh
+
+post_pkginstall()
+{
+	# If there is no glib schemas directory, there is nothing to do.
+	[ -d '/usr/share/glib-2.0/schemas' ] || return
+
+	# If there is no update utility, there is nothing to do.
+	[ -x '/usr/bin/glib-compile-schemas' ] || return
+
+	/usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas &> /dev/null
+}
+
+post_pkgremove()
+{
+	post_pkginstall
+}
+
+op=$1
+shift
+$op $*
