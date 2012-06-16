@@ -1,0 +1,21 @@
+#!/bin/sh
+
+post_pkginstall()
+{
+	# If there is no mime types directory, there is nothing to do.
+	[ -d '/usr/share/mime' ] || return
+
+	# If there is no update utility, there is nothing to do.
+	[ -x '/usr/bin/update-mime-database' ] || return
+
+	/usr/bin/update-mime-database /usr/share/mime &> /dev/null
+}
+
+post_pkgremove()
+{
+	post_pkginstall
+}
+
+op=$1
+shift
+$op $*
