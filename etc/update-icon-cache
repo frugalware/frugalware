@@ -1,0 +1,37 @@
+#!/bin/sh
+
+post_pkginstall()
+{
+	local cmd
+
+	# If there is no icons directory, there is nothing to do.
+	[ -d '/usr/share/icons' ] || return
+
+	# Either command will generate the same cache, so pick in order of age.
+	# If none are found, there is nothing to do.
+	if [ -x '/usr/bin/gtk-update-icon-cache-3.0' ]; then
+		cmd='/usr/bin/gtk-update-icon-cache-3.0'
+	elif [ -x '/usr/bin/gtk-update-icon-cache' ]; then
+		cmd='/usr/bin/gtk-update-icon-cache'
+	else
+		return
+	fi
+
+	# Update all icon directories.
+	for i in /usr/share/icons/*; do
+		[ -d "$i" ] || continue
+		$cmd --force --ignore-theme-index "$i" &> /dev/null
+	done
+
+	# Delete invalid caches.
+	find /usr/share/icons -name '.icon-theme.cache' -delete
+}
+
+post_pkgremove()
+{
+	post_pkginstall
+}
+
+op=$1
+shift
+$op $*
