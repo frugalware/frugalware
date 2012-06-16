@@ -1,0 +1,21 @@
+#!/bin/sh
+
+post_pkginstall()
+{
+	# If there is no applications directory, there is nothing to do.
+	[ -d '/usr/share/applications' ] || return
+
+	# If there is no update utility, there is nothing to do.
+	[ -x '/usr/bin/update-desktop-database' ] || return
+
+	/usr/bin/update-desktop-database /usr/share/applications &> /dev/null
+}
+
+post_pkgremove()
+{
+	post_pkginstall
+}
+
+op=$1
+shift
+$op $*
