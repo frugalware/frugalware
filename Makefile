@@ -16,7 +16,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 1.7rc2
+VERSION = 1.7
 CODENAME = Gaia
 
 FRUGALWARE_LANGS = de hu it
