@@ -16,8 +16,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 1.7
-CODENAME = Gaia
+VERSION = 1.8pre1
+CODENAME = Cinna
 
 FRUGALWARE_LANGS = de hu it
 SERVICE_LANGS = de hu
