@@ -54,7 +54,6 @@ install:
 	done
 	$(INSTALL) -d $(DESTDIR)/etc/skel
 	$(INSTALL) -d $(DESTDIR)/etc/sysconfig
-	ln -sf ../profile.d/lang.sh $(DESTDIR)/etc/sysconfig/language
 	$(INSTALL) -d $(DESTDIR)/home
 	$(INSTALL) -d $(DESTDIR)/mnt
 	$(INSTALL) -d $(DESTDIR)/media
