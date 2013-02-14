@@ -16,8 +16,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 1.8
-CODENAME = Cinna
+VERSION = 1.9pre1
+CODENAME = Solaria
 
 FRUGALWARE_LANGS = de hu it
 SERVICE_LANGS = de hu
