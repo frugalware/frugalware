@@ -17,7 +17,7 @@
 #
 
 VERSION = 1.9pre1
-CODENAME = Solaria
+CODENAME = Arcturus
 
 FRUGALWARE_LANGS = de hu it
 SERVICE_LANGS = de hu
