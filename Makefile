@@ -38,6 +38,7 @@ install:
 	sed 's/@VERSION@/$(VERSION)/;s/@CODENAME@/$(CODENAME)/' etc/os-release.in > $(DESTDIR)/etc/os-release
 	sed 's/@VERSION@/$(VERSION)/;s/@CODENAME@/$(CODENAME)/' etc/issue.in > $(DESTDIR)/etc/issue
 	$(INSTALL) -m644 etc/issue.net $(DESTDIR)/etc/
+	$(INSTALL) -m644 etc/motd $(DESTDIR)/etc/
 	$(INSTALL) -m644 etc/ld.so.conf $(DESTDIR)/etc/
 	$(INSTALL) -m644 etc/nsswitch.conf $(DESTDIR)/etc/
 	$(INSTALL) -m644 etc/securetty $(DESTDIR)/etc/
