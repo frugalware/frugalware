@@ -54,6 +54,7 @@ install:
 	done
 	$(INSTALL) -d $(DESTDIR)/etc/skel
 	$(INSTALL) -d $(DESTDIR)/etc/sysconfig
+	$(INSTALL) -d $(DESTDIR)/etc/ld.so.conf.d
 	$(INSTALL) -d $(DESTDIR)/home
 	$(INSTALL) -d $(DESTDIR)/mnt
 	$(INSTALL) -d $(DESTDIR)/media
