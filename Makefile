@@ -16,8 +16,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 1.9
-CODENAME = Arcturus
+VERSION = 2.0pre1
+CODENAME = Rigel
 
 FRUGALWARE_LANGS = de hu it
 SERVICE_LANGS = de hu
