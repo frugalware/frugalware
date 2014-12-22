@@ -16,7 +16,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 2.0rc1
+VERSION = 2.0rc2
 CODENAME = Rigel
 
 FRUGALWARE_LANGS = de hu it
