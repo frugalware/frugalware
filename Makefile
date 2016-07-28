@@ -16,18 +16,13 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 
-VERSION = 2.0
-CODENAME = Rigel
-
-FRUGALWARE_LANGS = de hu it
-SERVICE_LANGS = de hu
+VERSION = 2.1
+CODENAME = Derowd
 
 INSTALL = /usr/bin/install -c
 DESTDIR =
 
 all:
-	chmod +x var/service
-	help2man -n "manages Frugalware services" -S Frugalware -N var/service |sed 's/\\(co/(c)/' >var/service.1
 
 install:
 	$(INSTALL) -d $(DESTDIR)/bin
@@ -43,16 +38,8 @@ install:
 	$(INSTALL) -m644 etc/nsswitch.conf $(DESTDIR)/etc/
 	$(INSTALL) -m644 etc/securetty $(DESTDIR)/etc/
 	$(INSTALL) -m644 etc/termcap $(DESTDIR)/etc/
-	$(INSTALL) -d $(DESTDIR)/etc/pacman-g2/hooks/
-	$(INSTALL) -m644 etc/update-frugalware-version $(DESTDIR)/etc/pacman-g2/hooks/
 	$(INSTALL) -d $(DESTDIR)/etc/X11
 	$(INSTALL) -d $(DESTDIR)/etc/rc.d
-	for i in $(FRUGALWARE_LANGS); do \
-		mkdir -p $(DESTDIR)/lib/initscripts/messages/$${i}_`echo $$i|tr [:lower:] [:upper:]`/LC_MESSAGES/; \
-	done
-	for i in $(SERVICE_LANGS); do \
-		mkdir -p $(DESTDIR)/var/lib/frugalware/messages/$${i}_`echo $$i|tr [:lower:] [:upper:]`/LC_MESSAGES/; \
-	done
 	$(INSTALL) -d $(DESTDIR)/etc/skel
 	$(INSTALL) -d $(DESTDIR)/etc/sysconfig
 	$(INSTALL) -d $(DESTDIR)/etc/ld.so.conf.d
@@ -81,9 +68,9 @@ install:
 	$(INSTALL) -d $(DESTDIR)/usr/local/include
 	$(INSTALL) -d $(DESTDIR)/usr/local/info
 	$(INSTALL) -d $(DESTDIR)/usr/local/lib
-	$(INSTALL) -d $(DESTDIR)/usr/local/man
+	$(INSTALL) -d $(DESTDIR)/usr/local/share/man
 	for i in {cat,man}{1,2,3,4,5,6,7,8,9,n}; do \
-		$(INSTALL) -d $(DESTDIR)/usr/local/man/$$i; \
+		$(INSTALL) -d $(DESTDIR)/usr/local/share/man/$$i; \
 	done
 	$(INSTALL) -d $(DESTDIR)/usr/local/sbin
 	$(INSTALL) -d $(DESTDIR)/usr/local/src
@@ -103,15 +90,7 @@ install:
 	ln -sf log $(DESTDIR)/var/adm
 	$(INSTALL) -d $(DESTDIR)/var/lib
 	$(INSTALL) -d $(DESTDIR)/var/lib/frugalware
-	$(INSTALL) -d $(DESTDIR)/var/lib/frugalware/messages
-	$(INSTALL) -m644 var/rc.messages $(DESTDIR)/var/lib/frugalware/messages/rc.messages
 	$(INSTALL) -d $(DESTDIR)/var/lib/frugalware/system
-	$(INSTALL) var/service $(DESTDIR)/var/lib/frugalware/system/
-	$(INSTALL) -m644 var/service.1 $(DESTDIR)/usr/share/man/man1/
-	ln -s ../var/lib/frugalware/system/service $(DESTDIR)/sbin/service
-	for i in $(SERVICE_LANGS); do \
-		msgfmt -c --statistics -o $(DESTDIR)/var/lib/frugalware/messages/$${i}_`echo $$i|tr [:lower:] [:upper:]`/LC_MESSAGES/service.mo var/service-$$i; \
-	done
 	$(INSTALL) -d $(DESTDIR)/var/lib/frugalware/tmp
 	$(INSTALL) -d $(DESTDIR)/var/lib/frugalware/tools
 	$(INSTALL) -d $(DESTDIR)/var/lib/frugalware/user
@@ -125,9 +104,7 @@ install:
 	$(INSTALL) -d $(DESTDIR)/var/run
 	$(INSTALL) -d $(DESTDIR)/var/spool
 	$(INSTALL) -d $(DESTDIR)/var/spool/mail
-	$(INSTALL) -d $(DESTDIR)/var/man
 	$(INSTALL) -d -m1777 $(DESTDIR)/var/tmp
-	ln -sf /var/spool/rwho $(DESTDIR)/var/rwho
 ifeq ($(shell uname -m),x86_64)
 	ln -sf /lib $(DESTDIR)/lib64
 	ln -sf /usr/lib $(DESTDIR)/usr/lib64
