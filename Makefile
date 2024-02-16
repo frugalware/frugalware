@@ -101,11 +101,6 @@ install:
 	$(INSTALL) -d $(DESTDIR)/var/spool
 	$(INSTALL) -d $(DESTDIR)/var/spool/mail
 	$(INSTALL) -d -m1777 $(DESTDIR)/var/tmp
-ifeq ($(shell uname -m),x86_64)
-	ln -sf /usr/lib $(DESTDIR)/lib64
-	ln -sf /usr/lib $(DESTDIR)/usr/lib64
-	ln -sf /usr/local/lib $(DESTDIR)/usr/local/lib64
-endif
 	ln -sf /usr/lib $(DESTDIR)/lib
 	ln -sf /usr/bin $(DESTDIR)/bin
 	ln -sf /usr/bin $(DESTDIR)/sbin
